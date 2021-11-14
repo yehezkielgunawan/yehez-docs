@@ -1,5 +1,5 @@
 export default {
-  github: 'https://github.com/yehezkielgunawan/yehez-docs',
+  github: 'https://github.com/yehezkielgunawan',
   docsRepositoryBase: 'https://github.com/yehezkielgunawan/yehez-docs',
   titleSuffix: ' – YehezGun',
   logo: (
