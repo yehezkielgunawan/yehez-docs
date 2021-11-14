@@ -1,22 +1,15 @@
-# [Nextra](https://nextra.vercel.app)
+# Yehez-Docs
 
-_Warning: this project is not production ready, API might change without notice._
+![[Yehez-docs]](https://socialify.git.ci/yehezkielgunawan/yehez-docs/image?description=1&logo=https%3A%2F%2Fimage.flaticon.com%2Ficons%2Fpng%2F512%2F1246%2F1246882.png&owner=1&pattern=Floating%20Cogs&theme=Dark)
 
-[![](https://vercel.com/button)](https://vercel.com/import/git?s=https%3A%2F%2Fgithub.com%2Fshuding%2Fnextra&c=1)
+This is my personal "second brain". I've exhausted googling the same thing every time, so I put the tools, library, or framework that I frequently use to this site. You can access the live demo at [docs.yehezgun.com](https://docs.yehezgun.com).
 
-**Nextra** is a [Next.js](https://nextjs.org) and [MDX](https://mdxjs.com) powered, no-code site generator.
+This project was scaffolded using [Nextra Docs Template](https://nextra.vercel.app/).
 
-![](/public/demo.png)
+Actually, I made it for myself. But of course, I'm open to any feedback. You can email me at [yehezkiel.gunawan28@gmail.com](mailto:yehezkiel.gunawan28@gmail.com), **if you found any deprecated or just want to give some suggestion.** Thank you.
 
-## Development
+## References
 
-The code of Nextra is under the [`core`](https://github.com/shuding/nextra/tree/core) branch.
-
-## Themes
-
-- [nextra-theme-docs](https://github.com/vercel/swr-site) ([demo](https://swr.vercel.app))
-- [nextra-theme-blog](https://github.com/shuding/site) ([demo](https://shud.in))
-
----
-
-Created by [@shuding](https://github.com/shuding) and [@pacocoursey](https://github.com/pacocoursey) at [Vercel](https://vercel.com). Released under the MIT license.
+- [Sozonome's Base site](https://base.sznm.dev)
+- [Theodorus Clarence's Documentation Site](https://docs.thcl.dev/)
+- [Freepik Image](https://image.flaticon.com/icons/png/512/1031/1031982.png) - For the image asset.
