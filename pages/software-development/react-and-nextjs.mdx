@@ -72,6 +72,42 @@ yehez-nextchakra-starter is a starter template to initialize  **[Next.js](https
 [yehez-vitechakra-starter](https://yehez-vitechakra-starter.yehezgun.com/)\
 yehez-vitechakra-starter is a starter template to initialize React app with Chakra UI and Typescript setup (using Vite as build tool)
 
+## Chakra UI Most Used Snippets
+
+### Check Desktop Width
+
+```ts
+import { useMediaQuery } from '@chakra-ui/react'
+
+export const useDesktopWidthCheck = () => {
+  const [isDesktopWidth] = useMediaQuery('(min-width: 42rem)')
+
+  return isDesktopWidth
+}
+```
+
+### Using Next.js Link with Chakra Link
+
+```ts
+import {Link as Chakra Link} from "@chakra-ui/react"
+import NextLink from "next/link"
+import { ReactNode } from "react";
+
+type LinkProps = {
+  href: string;
+  children: ReactNode;
+  isExternal: boolean;
+};
+
+export const LinkComponent = ({href, children, isExternal}: LinkProps) => {
+  return (
+    <NextLink href={href} passHref>
+     <ChakraLink isExternal={isExternal}>{children}</ChakraLink>
+    </NextLink>
+  )
+}
+```
+
 ## Video Resources
 
 |                                                                                                                              |                                                                                                                          |
