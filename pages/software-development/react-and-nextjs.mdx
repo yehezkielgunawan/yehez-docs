@@ -74,6 +74,21 @@ yehez-vitechakra-starter is a starter template to initialize React app with Chak
 
 ## Chakra UI Most Used Snippets
 
+### Costumized Toast Hooks
+
+```ts
+import { useToast, UseToastOptions } from '@chakra-ui/react'
+
+// Customized reusable toast hooks
+export const useAppToast = (options?: UseToastOptions) =>
+  useToast({
+    variant: 'top-accent',
+    position: 'bottom-right',
+    isClosable: true,
+    ...options,
+  })
+```
+
 ### Check Desktop Width
 
 ```ts
