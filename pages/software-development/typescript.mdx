@@ -2,36 +2,69 @@ import Callout from 'nextra-theme-docs/callout'
 
 # Typescript
 
-<Callout>
-  This page contains TS snippets that I usually use.
-</Callout>
+<Callout>This page contains TS snippets that I usually use.</Callout>
 
 ## Format Date
 
 ```ts
-export const formatDate = (date: string | Date, time = true): string  => {
-  const convertedDate = new Date(date);
+export const formatDate = (date: string | Date, time = true): string => {
+  const convertedDate = new Date(date)
 
   const options: Intl.DateTimeFormatOptions = {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  };
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  }
 
   const optionsWithoutTime: Intl.DateTimeFormatOptions = {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  };
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  }
 
   return convertedDate.toLocaleDateString(
-    "en-EN",
+    'en-EN',
     time ? options : optionsWithoutTime
-  );
-};
+  )
+}
+```
+
+## Frequent Axios snippets
+
+### GET Request
+
+```ts
+export const fetcherName = async () => {
+  return await axios
+    .get(`Link`)
+    .then((res: AxiosResponse<DataType>) => res.data)
+}
+```
+
+### POST Request
+
+```ts
+export const PostName = async (reqBody) => {
+  return await axios
+    .post<reqType, AxiosResponse<resType>>(
+      `LINK`,
+      {
+        reqBody,
+      },
+      {
+        headers: {
+          Authorization: 'Bearer ' + API_KEY,
+        },
+      }
+    )
+    .then((res: AxiosResponse<resType>) => {
+      return res.data.data
+    })
+}
 ```
 
 ## Next.js ESLint Config
+
 Full Docs: [`https://nextjs.org/docs/basic-features/eslint`](https://nextjs.org/docs/basic-features/eslint)
 
 ```json
@@ -90,6 +123,7 @@ Full Docs: [`https://nextjs.org/docs/basic-features/eslint`](https://nextjs.org/
 ```
 
 ## Plain React ESLint Config
+
 Full Docs : [`https://nextjs.org/docs/basic-features/eslint`](https://nextjs.org/docs/basic-features/eslint)
 
 ```js
@@ -98,54 +132,54 @@ module.exports = {
   env: {
     node: true,
   },
-  extends: ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
-  parser: "@typescript-eslint/parser",
-  plugins: ["react", "react-hooks", "@typescript-eslint", "import"],
+  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended'],
+  parser: '@typescript-eslint/parser',
+  plugins: ['react', 'react-hooks', '@typescript-eslint', 'import'],
   settings: {
-    "import/resolver": {
+    'import/resolver': {
       node: {
-        extensions: [".js", ".jsx", ".ts", ".tsx"],
-        moduleDirectory: ["node_modules", "src/"],
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        moduleDirectory: ['node_modules', 'src/'],
       },
     },
   },
   rules: {
-    "no-unused-vars": "off",
-    "@typescript-eslint/no-unused-vars": [
-      "error",
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': [
+      'error',
       {
-        argsIgnorePattern: "^_",
+        argsIgnorePattern: '^_',
       },
     ],
-    "@typescript-eslint/explicit-module-boundary-types": "off",
-    "@typescript-eslint/no-non-null-assertion": "off",
-    "@typescript-eslint/no-inferrable-types": "off",
-    "import/order": [
-      "warn",
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+    '@typescript-eslint/no-non-null-assertion': 'off',
+    '@typescript-eslint/no-inferrable-types': 'off',
+    'import/order': [
+      'warn',
       {
         groups: [
-          ["builtin", "external"],
-          "internal",
-          "parent",
-          ["sibling", "index"],
-          "object",
+          ['builtin', 'external'],
+          'internal',
+          'parent',
+          ['sibling', 'index'],
+          'object',
         ],
-        "newlines-between": "always",
+        'newlines-between': 'always',
         alphabetize: {
-          order: "asc",
+          order: 'asc',
           caseInsensitive: true,
         },
       },
     ],
-    complexity: "warn",
-    "no-console": ["error"],
+    complexity: 'warn',
+    'no-console': ['error'],
   },
-};
+}
 ```
 
 ## Video Resources
 
-|                                                                                                                         |                                                                                                                                                                                                     |
-| ------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------:|
+|                                                                                                                         |                                                                                                                       |
+| ----------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------: |
 | [![React Typescript](http://i3.ytimg.com/vi/ydkQlJhodio/hqdefault.jpg)](https://www.youtube.com/watch?v=ydkQlJhodio)    | [![TS in 100 seconds](http://i3.ytimg.com/vi/zQnBQ4tB3ZA/hqdefault.jpg)](https://www.youtube.com/watch?v=zQnBQ4tB3ZA) |
-| [![TS in Literal Magic](http://i3.ytimg.com/vi/5JqzCjg4YRU/hqdefault.jpg)](https://www.youtube.com/watch?v=5JqzCjg4YRU) |                                                                                                                                                                                                     |
+| [![TS in Literal Magic](http://i3.ytimg.com/vi/5JqzCjg4YRU/hqdefault.jpg)](https://www.youtube.com/watch?v=5JqzCjg4YRU) |                                                                                                                       |
