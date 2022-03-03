@@ -2,6 +2,9 @@ export default {
   github: 'https://github.com/yehezkielgunawan',
   docsRepositoryBase: 'https://github.com/yehezkielgunawan/yehez-docs',
   titleSuffix: ' – YehezGun',
+  branch: 'main',
+  floatTOC: true,
+  darkMode: true,
   logo: (
     <>
       <span className="mr-2 font-extrabold hidden md:inline">Docs</span>
