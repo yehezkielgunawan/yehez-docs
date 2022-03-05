@@ -85,6 +85,12 @@ export default {
       MIT {new Date().getFullYear()} ©{' '}
       <a href="https://yehezgun.com" target="_blank">
         Yehezkiel Gunawan
+      </a>{' '}
+      <br />
+      If there's some contents which are outdated or need to be updated, feel
+      free to email me{' '}
+      <a href="mailto:yehezkiel.gunawan28@gmail.com?subject=docs.yehezgun.com">
+        here
       </a>
     </>
   ),
