@@ -96,9 +96,15 @@ Full Docs: [`https://nextjs.org/docs/basic-features/eslint`](https://nextjs.org/
   },
   "rules": {
     "no-unused-vars": "off",
-    "@typescript-eslint/no-unused-vars": [
-      "error",
+    "no-var": "warn",
+    "@typescript-eslint/no-unused-vars": "off",
+    "unused-imports/no-unused-imports": "error",
+    "unused-imports/no-unused-vars": [
+      "warn",
       {
+        "vars": "all",
+        "varsIgnorePattern": "^_",
+        "args": "after-used",
         "argsIgnorePattern": "^_"
       }
     ],
@@ -125,61 +131,6 @@ Full Docs: [`https://nextjs.org/docs/basic-features/eslint`](https://nextjs.org/
     "complexity": "warn",
     "no-console": ["error"]
   }
-}
-```
-
-## Plain React ESLint Config
-
-Full Docs : [Create React App, Extending the ESLint Rules](https://create-react-app.dev/docs/setting-up-your-editor/#extending-or-replacing-the-default-eslint-config) & [ESLint Official Docs](https://eslint.org/docs/user-guide/getting-started)
-
-```js
-//eslintrc.js
-module.exports = {
-  env: {
-    node: true,
-  },
-  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended'],
-  parser: '@typescript-eslint/parser',
-  plugins: ['react', 'react-hooks', '@typescript-eslint', 'import'],
-  settings: {
-    'import/resolver': {
-      node: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
-        moduleDirectory: ['node_modules', 'src/'],
-      },
-    },
-  },
-  rules: {
-    'no-unused-vars': 'off',
-    '@typescript-eslint/no-unused-vars': [
-      'error',
-      {
-        argsIgnorePattern: '^_',
-      },
-    ],
-    '@typescript-eslint/explicit-module-boundary-types': 'off',
-    '@typescript-eslint/no-non-null-assertion': 'off',
-    '@typescript-eslint/no-inferrable-types': 'off',
-    'import/order': [
-      'warn',
-      {
-        groups: [
-          ['builtin', 'external'],
-          'internal',
-          'parent',
-          ['sibling', 'index'],
-          'object',
-        ],
-        'newlines-between': 'always',
-        alphabetize: {
-          order: 'asc',
-          caseInsensitive: true,
-        },
-      },
-    ],
-    complexity: 'warn',
-    'no-console': ['error'],
-  },
 }
 ```
 
