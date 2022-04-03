@@ -1,6 +1,6 @@
 # Yehez-Docs
 
-![[Yehez-docs]](https://socialify.git.ci/yehezkielgunawan/yehez-docs/image?description=1&logo=https%3A%2F%2Fimage.flaticon.com%2Ficons%2Fpng%2F512%2F1246%2F1246882.png&owner=1&pattern=Floating%20Cogs&theme=Dark)
+![Yehez-Docs](https://socialify.git.ci/yehezkielgunawan/yehez-docs/image?description=1&logo=https%3A%2F%2Fcdn-icons-png.flaticon.com%2F512%2F1246%2F1246885.png%3Fw%3D740&owner=1&theme=Dark)
 
 This is my personal "second brain". I've exhausted googling the same thing every time, so I put the tools, library, or framework that I frequently use to this site. You can access the live demo at [docs.yehezgun.com](https://docs.yehezgun.com).
 
