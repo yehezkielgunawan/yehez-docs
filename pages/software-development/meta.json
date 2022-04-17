@@ -3,5 +3,6 @@
     "typescript": "Typescript",
     "react-and-nextjs": "React (and Next.js) Things",
     "git": "Git",
-    "styling": "Styling"
+    "styling": "Styling",
+    "standard-version": "Standard Version"
 }
