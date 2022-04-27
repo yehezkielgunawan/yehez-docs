@@ -37,36 +37,44 @@ export const formatDate = (date: string | Date, time = true): string => {
 
 ## Frequent Axios snippets
 
+### Reusable Fetcher Function
+
+```ts
+import axios, { AxiosRequestConfig, AxiosResponse } from 'axios'
+
+export const fetcher = <ResType, ReqType>(
+  url: string,
+  params?: AxiosRequestConfig['params'],
+  headers?: AxiosRequestConfig['headers'],
+  data?: ReqType | AxiosRequestConfig['data'],
+  method: AxiosRequestConfig['method'] = 'GET'
+) =>
+  axios(url, { params, headers, data, method }).then(
+    (res: AxiosResponse<ResType>) => res.data
+  )
+```
+
 ### GET Request
 
 ```ts
-export const fetcherName = async () => {
-  return await axios
-    .get(`Link`)
-    .then((res: AxiosResponse<DataType>) => res.data)
-}
+export const getAPI = <ResType, ReqType = undefined>(
+  url: string,
+  params?: AxiosRequestConfig['params'],
+  headers?: AxiosRequestConfig['headers'],
+  body?: ReqType | AxiosRequestConfig['data']
+) => fetcher<ResType, ReqType>(url, params, headers, body, 'GET')
 ```
 
 ### POST Request
 
 ```ts
-export const PostName = async (reqBody) => {
-  return await axios
-    .post<reqType, AxiosResponse<resType>>(
-      `LINK`,
-      {
-        reqBody,
-      },
-      {
-        headers: {
-          Authorization: 'Bearer ' + API_KEY,
-        },
-      }
-    )
-    .then((res: AxiosResponse<resType>) => {
-      return res.data.data
-    })
-}
+export const postAPI = <ResType, ReqType>(
+  url: string,
+  params?: AxiosRequestConfig['params'],
+  headers?: AxiosRequestConfig['headers'],
+  body?: ReqType | AxiosRequestConfig['data'],
+  method: AxiosRequestConfig['method'] = 'POST'
+) => fetcher<ResType, ReqType>(url, params, headers, body, method)
 ```
 
 ## Next.js ESLint Config
