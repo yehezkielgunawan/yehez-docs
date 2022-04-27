@@ -30,14 +30,14 @@ export default {
       <meta name="twitter:card" content="summary_large_image" />
       <meta
         name="twitter:image"
-        content="https://yehez-og-image.yehezgun.com/**docs**.yehezgun.com.png?theme=dark&md=1&fontSize=100px&images=https%3A%2F%2Fres.cloudinary.com%2Fyehez%2Fimage%2Fupload%2Fv1636202181%2Fpeep_amkhuu.svg&widths=250&heights=250"
+        content="https://og.yehezgun.com/api/base?description=A%20personal%20docs%20site%20by%20Yehezkiel%20Gunawan&logo=https%3A%2F%2Fcdn-icons-png.flaticon.com%2F512%2F1246%2F1246882.png%3Fw%3D740&siteName=docs.yehezgun.com&templateTitle=Yehez-Docs&theme=dark"
       />
       <meta name="twitter:site:domain" content="docs.yehezgun.com" />
       <meta name="twitter:url" content="https://docs.yehezgun.com" />
       <meta name="og:title" content="Yehezkiel Gunawan's Personal Docs Site" />
       <meta
         name="og:image"
-        content="https://yehez-og-image.yehezgun.com/**docs**.yehezgun.com.png?theme=dark&md=1&fontSize=100px&images=https%3A%2F%2Fres.cloudinary.com%2Fyehez%2Fimage%2Fupload%2Fv1636202181%2Fpeep_amkhuu.svg&widths=250&heights=250"
+        content="https://og.yehezgun.com/api/base?description=A%20personal%20docs%20site%20by%20Yehezkiel%20Gunawan&logo=https%3A%2F%2Fcdn-icons-png.flaticon.com%2F512%2F1246%2F1246882.png%3Fw%3D740&siteName=docs.yehezgun.com&templateTitle=Yehez-Docs&theme=dark"
       />
       <meta
         name="apple-mobile-web-app-title"
