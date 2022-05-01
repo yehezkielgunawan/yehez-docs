@@ -156,6 +156,88 @@ Full Docs: [HERE](https://www.npmjs.com/package/prettier)
 }
 ```
 
+## Most Used Utility Types
+
+### Partial
+
+Constructs a type with all properties of Type set to optional. This utility will return a type that represents all subsets of a given type.
+
+```ts
+type Todo = {
+  title: string
+  description: string
+}
+
+function updateTodo(todo: Todo, fieldsToUpdate: Partial<Todo>) {
+  return { ...todo, ...fieldsToUpdate }
+}
+
+const todo1 = {
+  title: 'organize desk',
+  description: 'clear clutter',
+}
+
+const todo2 = updateTodo(todo1, {
+  description: 'throw out trash',
+})
+```
+
+### Required
+
+Constructs a type consisting of all properties of Type set to required. The opposite of Partial.
+
+```ts
+type Props = {
+  a?: number
+  b?: string
+}
+
+const obj: Props = { a: 5 }
+
+const obj2: Required<Props> = { a: 5 }
+// Property 'b' is missing in type '{ a: number; }' but required in type 'Required<Props>'.
+```
+
+### Pick
+
+Constructs a type by picking the set of properties Keys (string literal or union of string literals) from Type.
+
+```ts
+type Todo = {
+  title: string
+  description: string
+  completed: boolean
+}
+
+type TodoPreview = Pick<Todo, 'title' | 'completed'>
+
+const todo: TodoPreview = {
+  title: 'Clean room',
+  completed: false,
+}
+```
+
+### Omit
+
+Constructs a type by picking all properties from Type and then removing Keys (string literal or union of string literals).
+
+```ts
+type Todo = {
+  title: string
+  description: string
+  completed: boolean
+  createdAt: number
+}
+
+type TodoPreview = Omit<Todo, 'description'>
+
+const todo: TodoPreview = {
+  title: 'Clean room',
+  completed: false,
+  createdAt: 1615544252770,
+}
+```
+
 ## Video Resources
 
 |                                                                                                                         |                                                                                                                       |
