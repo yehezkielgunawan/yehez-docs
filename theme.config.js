@@ -4,8 +4,7 @@ export default {
   titleSuffix: ' – YehezGun',
   branch: 'main',
   floatTOC: true,
-  unstable_stork: false,
-  unstable_flexsearch: true,
+  unstable_stork: true,
   darkMode: true,
   logo: (
     <>
@@ -89,8 +88,8 @@ export default {
         Yehezkiel Gunawan
       </a>{' '}
       <br />
-      If you've found that there's some contents that needs to be updated or fixed, feel
-      free to email me{' '}
+      If you've found that there's some contents that needs to be updated or
+      fixed, feel free to email me{' '}
       <a href="mailto:yehezkiel.gunawan28@gmail.com?subject=docs.yehezgun.com">
         here
       </a>
