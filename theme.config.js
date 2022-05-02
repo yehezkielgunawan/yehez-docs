@@ -40,40 +40,11 @@ export default {
         name="og:image"
         content="https://og.yehezgun.com/api/base?description=A%20personal%20docs%20site%20by%20Yehezkiel%20Gunawan&logo=https%3A%2F%2Fcdn-icons-png.flaticon.com%2F512%2F1246%2F1246882.png%3Fw%3D740&siteName=docs.yehezgun.com&templateTitle=Yehez-Docs&theme=dark"
       />
+      <link rel="manifest" href="/manifest.json" />
       <meta
         name="apple-mobile-web-app-title"
         content="Yehezkiel Gunawan's Personal Docs Site"
       />
-      <link
-        rel="apple-touch-icon"
-        sizes="180x180"
-        href="/apple-touch-icon.png"
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="192x192"
-        href="/android-chrome-icon.png"
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="32x32"
-        href="/favicon-32x32.png"
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="96x96"
-        href="/favicon-96x96.png"
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="16x16"
-        href="/favicon-16x16.png"
-      />
-      <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
     </>
   ),
   search: true,
