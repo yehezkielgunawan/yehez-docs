@@ -4,7 +4,7 @@ export default {
   titleSuffix: ' – YehezGun',
   branch: 'main',
   floatTOC: true,
-  unstable_stork: true,
+  unstable_stork: false,
   darkMode: true,
   logo: (
     <>
