@@ -81,3 +81,48 @@ Full Docs: [HERE](https://www.npmjs.com/package/prettier)
   "trailingComma": "es5"
 }
 ```
+
+## Husky
+
+Full Docs: [https://typicode.github.io/husky/](https://typicode.github.io/husky/)
+
+### How to Install Husky
+
+```bash
+npx husky-init && npm install       # npm
+npx husky-init && yarn              # Yarn 1
+yarn dlx husky-init --yarn2 && yarn # Yarn 2+
+pnpm dlx husky-init && pnpm install # pnpm
+```
+
+### Automatically Setup Husky
+
+```bash
+npx husky add .husky/commit-msg 'npx --no -- commitlint --edit "$1"'
+```
+
+### Config Lint Staged
+
+Full Docs: [https://github.com/okonet/lint-staged](https://github.com/okonet/lint-staged)
+
+```bash
+npx mrm@2 lint-staged
+```
+
+Don't forget to setup the `pre-commit` at husky folder after done this setup
+
+### Commitlint Config
+
+Full Docs: [https://commitlint.js.org/#/guides-local-setup](https://commitlint.js.org/#/guides-local-setup)
+
+```bash
+yarn add --dev @commitlint/config-conventional @commitlint/cli
+```
+
+```bash
+echo "module.exports = { extends: ['@commitlint/config-conventional'] };" > commitlint.config.js
+```
+
+```bash
+yarn husky add .husky/commit-msg 'yarn commitlint --edit $1'
+```
