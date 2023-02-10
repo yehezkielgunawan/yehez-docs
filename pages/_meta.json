@@ -1,19 +1,19 @@
 {
   "index": {
     "title": "Introduction",
-    "type": "nav",
+    "type": "page",
     "hidden": true
   },
   "software-development": {
     "title": "Software Development",
-    "type": "nav"
+    "type": "page"
   },
   "bookmarks": {
     "title": "Bookmarks",
-    "type": "nav"
+    "type": "page"
   },
   "interview-things": {
     "title": "Interview Things",
-    "type": "nav"
+    "type": "page"
   }
 }

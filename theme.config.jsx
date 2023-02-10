@@ -1,15 +1,23 @@
+import { useConfig } from 'nextra-theme-docs'
+
 export default {
-  github: 'https://github.com/yehezkielgunawan',
-  docsRepositoryBase: 'https://github.com/yehezkielgunawan/yehez-docs',
+  project: { link: 'https://github.com/yehezkielgunawan' },
+  docsRepositoryBase:
+    'https://github.com/yehezkielgunawan/yehez-docs/tree/main',
   useNextSeoProps() {
+    const { frontMatter } = useConfig()
+
+    const defaultTitle = frontMatter.overrideTitle || 'YehezGun'
+
     return {
+      description: frontMatter.description,
+      defaultTitle,
       titleTemplate: '%s - YehezGun',
     }
   },
   darkMode: true,
   logo: (
     <>
-      <span className="mr-2 font-extrabold hidden md:inline">Docs</span>
       <span className="text-gray-600 font-normal hidden md:inline">
         YehezGun's Personal Docs
       </span>
