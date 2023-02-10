@@ -1,0 +1,128 @@
+# Linter and Prettier Config
+
+This is the most frequent ESLint and Prettier config that I usually use for my personal projects.
+
+## ESLint Config
+
+Full Docs for Next.js: [https://nextjs.org/docs/basic-features/eslint](https://nextjs.org/docs/basic-features/eslint) <br/>
+My custom ESLint rules: [eslint-config-yehezgun](https://www.npmjs.com/package/eslint-config-yehezgun)
+
+```js
+//eslintrc.js
+module.exports = {
+  env: {
+    node: true,
+  },
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:sonarjs/recommended',
+  ],
+  parser: '@typescript-eslint/parser',
+  plugins: ['@typescript-eslint', 'import', 'unused-imports'],
+  settings: {
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        moduleDirectory: ['node_modules', 'src/'],
+      },
+    },
+  },
+  rules: {
+    'no-unused-vars': 'off',
+    'no-var': 'warn',
+    '@typescript-eslint/no-unused-vars': 'off',
+    'unused-imports/no-unused-imports': 'error',
+    'unused-imports/no-unused-vars': [
+      'warn',
+      {
+        vars: 'all',
+        varsIgnorePattern: '^_',
+        args: 'after-used',
+        argsIgnorePattern: '^_',
+      },
+    ],
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+    '@typescript-eslint/no-non-null-assertion': 'off',
+    '@typescript-eslint/no-inferrable-types': 'off',
+    'import/order': [
+      'warn',
+      {
+        groups: [
+          ['builtin', 'external'],
+          'internal',
+          'parent',
+          ['sibling', 'index'],
+          'object',
+        ],
+        'newlines-between': 'always',
+        alphabetize: {
+          order: 'asc',
+          caseInsensitive: true,
+        },
+      },
+    ],
+    complexity: 'warn',
+    'no-console': ['error'],
+  },
+}
+```
+
+## Frequent Prettier Config
+
+Full Docs: [HERE](https://www.npmjs.com/package/prettier)
+
+```json
+{
+  "endOfLine": "lf",
+  "semi": true,
+  "singleQuote": false,
+  "tabWidth": 2,
+  "trailingComma": "es5"
+}
+```
+
+## Husky
+
+Full Docs: [https://typicode.github.io/husky/](https://typicode.github.io/husky/)
+
+### How to Install Husky
+
+```bash
+npx husky-init && npm install       # npm
+npx husky-init && yarn              # Yarn 1
+yarn dlx husky-init --yarn2 && yarn # Yarn 2+
+pnpm dlx husky-init && pnpm install # pnpm
+```
+
+### Automatically Setup Husky
+
+```bash
+npx husky add .husky/commit-msg 'npx --no -- commitlint --edit "$1"'
+```
+
+### Config Lint Staged
+
+Full Docs: [https://github.com/okonet/lint-staged](https://github.com/okonet/lint-staged)
+
+```bash
+npx mrm@2 lint-staged
+```
+
+Don't forget to setup the `pre-commit` at husky folder after done this setup
+
+### Commitlint Config
+
+Full Docs: [https://commitlint.js.org/#/guides-local-setup](https://commitlint.js.org/#/guides-local-setup)
+
+```bash
+yarn add --dev @commitlint/config-conventional @commitlint/cli
+```
+
+```bash
+echo "module.exports = { extends: ['@commitlint/config-conventional'] };" > commitlint.config.js
+```
+
+```bash
+yarn husky add .husky/commit-msg 'yarn commitlint --edit $1'
+```

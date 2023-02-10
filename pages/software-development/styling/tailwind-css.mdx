@@ -1,0 +1,144 @@
+# Most Used Tailwind CSS Concept or Snippets
+
+## Useful Tailwind Bookmarks
+
+| Site Name                                                                       | Description                                                                                                                                     |
+| ------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Tailwind CSS Official Docs](https://tailwindcss.dev/)                          | Official docs of Tailwind CSS                                                                                                                   |
+| [Headless UI](https://headlessui.dev/)                                          | Some Unstlyed UI Components and customizeable with Tailwind CSS                                                                                 |
+| [Tailwind color generator](https://tailwindcolorgenerator.com/)                 | Easily generate color shades for your Tailwind CSS config file.                                                                                 |
+| [Awesome Tailwind CSS](https://github.com/aniftyco/awesome-tailwindcss)         | List of useful notes, tools, or cheatsheet about Tailwind CSS                                                                                   |
+| [Tailwind Kit](https://www.tailwind-kit.com/)                                   | Tail-kit is a free and open source components and templates kit fully coded with Tailwind CSS 2.0                                               |
+| [Tailwind Forms](https://github.com/tailwindlabs/tailwindcss-forms)             | Official Tailwind plugin for forms element                                                                                                      |
+| [Tailwind Play](https://play.tailwindcss.com/)                                  | Official playground for Tailwind CSS                                                                                                            |
+| [Tailwind Merge](https://github.com/dcastil/tailwind-merge)                     | Utility function to efficiently merge Tailwind CSS classes in JS without style conflicts.                                                       |
+| [Tailwind CSS Pallete Generator](https://tailwind.simeongriggs.dev/blue/3B82F6) | 10-color pallete generator and API for Tailwind CSS                                                                                             |
+| [Hypecolor](https://hypercolor.dev/)                                            | A curated collection of beautiful premade gradients using default colors from Tailwind pallete as well as a selection of custom color gradients |
+
+## Most Used Global Styling for React + Tailwind Projects
+
+Taken from [yehezgun-v3 base styling](https://github.com/yehezkielgunawan/yehezgun-v3/blob/main/src/styles/globals.css)
+
+Reference: [Theodorus Clarence's Blog about Tailwind CSS best practice](https://theodorusclarence.com/blog/tailwindcss-best-practice)
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* https://play.tailwindcss.com/NVUHzqMBl5?file=css */
+:root {
+  /* #region  /**=========== Primary Color =========== */
+  /* !STARTERCONF Customize these variable, copy and paste from /styles/colors.css for list of colors */
+  --tw-color-primary-50: 249 250 251;
+  --tw-color-primary-100: 243 244 246;
+  --tw-color-primary-200: 229 231 235;
+  --tw-color-primary-300: 209 213 219;
+  --tw-color-primary-400: 156 163 175;
+  --tw-color-primary-500: 107 114 128;
+  --tw-color-primary-600: 75 85 99;
+  --tw-color-primary-700: 55 65 81;
+  --tw-color-primary-800: 31 41 55;
+  --tw-color-primary-900: 17 24 39;
+  --color-primary-50: rgb(var(--tw-color-primary-50)); /* #f9fafb */
+  --color-primary-100: rgb(var(--tw-color-primary-100)); /* #f3f4f6 */
+  --color-primary-200: rgb(var(--tw-color-primary-200)); /* #e5e7eb */
+  --color-primary-300: rgb(var(--tw-color-primary-300)); /* #d1d5db */
+  --color-primary-400: rgb(var(--tw-color-primary-400)); /* #9ca3af */
+  --color-primary-500: rgb(var(--tw-color-primary-500)); /* #6b7280 */
+  --color-primary-600: rgb(var(--tw-color-primary-600)); /* #4b5563 */
+  --color-primary-700: rgb(var(--tw-color-primary-700)); /* #374151 */
+  --color-primary-800: rgb(var(--tw-color-primary-800)); /* #1f2937 */
+  --color-primary-900: rgb(var(--tw-color-primary-900)); /* #111827 */
+  /* #endregion  /**======== Primary Color =========== */
+}
+
+@layer base {
+  .cursor-newtab {
+    cursor: url('/newtab-cursor.png') 10 10, pointer;
+  }
+
+  /* #region  /**=========== Typography =========== */
+  h1 {
+    @apply font-primary text-2xl font-bold md:text-4xl;
+  }
+
+  h2 {
+    @apply font-primary text-xl font-bold md:text-3xl;
+  }
+
+  h3 {
+    @apply font-primary text-lg font-bold md:text-2xl;
+  }
+
+  h4 {
+    @apply font-primary text-base font-bold md:text-lg;
+  }
+
+  body {
+    @apply font-secondary text-sm md:text-base;
+  }
+
+  .layout-container {
+    @apply mx-auto max-w-4xl px-4 pt-20 pb-8 md:px-2;
+  }
+
+  .link-underline {
+    background-image: linear-gradient(transparent, transparent), linear-gradient(to
+          right, var(--color-primary-200), var(--color-primary-500));
+    background-size: 0 3px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.3s ease-in-out;
+  }
+
+  .link-underline:hover {
+    background-size: 100% 3px;
+    background-position: 0 100%;
+  }
+}
+
+@layer utilities {
+  .scrollbar::-webkit-scrollbar {
+    @apply h-4 w-4;
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+    border-radius: 100vh;
+    @apply bg-primary-200 dark:bg-primary-500;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    border-radius: 100vh;
+    @apply border border-zinc-200 bg-zinc-400 dark:bg-zinc-600;
+    @apply hover:bg-slate-400;
+  }
+}
+```
+
+## Basic Layout Component that I usually use in Next.JS
+
+Taken from [yehezgun-v3 Layout Component](https://github.com/yehezkielgunawan/yehezgun-v3/blob/main/src/components/layouts/Layout.tsx)
+
+```tsx
+<>
+  <HeaderComponent />
+  <PreloadProvider>
+    <div className="layout-container">{children}</div>
+  </PreloadProvider>
+  <FooterComponent />
+</>
+```
+
+## Basic Page Structure that I usually use in Next.JS
+
+```tsx
+export default function PageName() {
+  return (
+    <>
+      <main>
+        <section>{contents}</section>
+      </main>
+    </>
+  )
+}
+```

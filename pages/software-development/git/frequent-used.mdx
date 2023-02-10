@@ -1,0 +1,96 @@
+# Git
+
+## Create New Repository
+
+Full Docs : [Create a repo - GitHub Docs](https://docs.github.com/en/get-started/quickstart/create-a-repo)
+
+## Frequently Used
+
+### Cancel Local Commits
+
+```bash
+git reset HEAD~1
+```
+
+### Checkout and Create a new branch based on the previous branch
+
+```bash
+git checkout -b [branch-name]
+```
+
+### Move Unstaged Changes to New Branch
+
+```bash
+git switch -c [new-branch]
+```
+
+## Essentials
+
+### Branch
+
+```bash
+# move to a branch
+git checkout <branch_name>
+# create and move to a new branch
+git checkout -b <branch_name>
+# delete a branch
+git branch -d <branch_name>
+# rename a branch
+git branch -m <renamed_branch>
+```
+
+### Add
+
+```bash
+# add all changed files
+git add .
+# add a file
+git add <file_relative_path>
+```
+
+### Commit
+
+```bash
+git commit -m "your_commit_message"
+```
+
+### Push
+
+```bash
+# push a branch which already connected and exist in remote
+git push
+# push a branch which doesn't exist on remote yet
+git push -u <upstream> <branch_name>
+```
+
+### Status
+
+```bash
+git status
+```
+
+### Configurations
+
+```bash
+# read configured user in current repo
+git config user.name
+git config user.email
+
+# read configured global user
+git config --global user.name
+git config --global user.email
+
+# configure user in current repo
+git config user.name "your_name"
+git config user.email "your_email"
+
+# configure global user
+git config --global user.name "your_name"
+git config --global user.email "your_email"
+```
+
+### Initialization
+
+```bash
+git init
+```
