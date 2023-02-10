@@ -1,10 +1,11 @@
 export default {
   github: 'https://github.com/yehezkielgunawan',
   docsRepositoryBase: 'https://github.com/yehezkielgunawan/yehez-docs',
-  titleSuffix: ' – YehezGun',
-  branch: 'main',
-  floatTOC: true,
-  unstable_stork: false,
+  useNextSeoProps() {
+    return {
+      titleTemplate: '%s - YehezGun',
+    }
+  },
   darkMode: true,
   logo: (
     <>
@@ -14,7 +15,7 @@ export default {
       </span>
     </>
   ),
-  head: (
+  head: () => (
     <>
       <meta name="msapplication-TileColor" content="#ffffff" />
       <meta name="theme-color" content="#ffffff" />
@@ -47,24 +48,26 @@ export default {
       />
     </>
   ),
-  search: true,
-  prevLinks: true,
-  nextLinks: true,
-  footer: true,
-  footerEditLink: 'Edit this page on GitHub',
-  footerText: (
-    <>
-      MIT {new Date().getFullYear()} ©{' '}
-      <a href="https://yehezgun.com" target="_blank">
-        Yehezkiel Gunawan
-      </a>{' '}
-      <br />
-      If you've found that there's some contents that needs to be updated or
-      fixed, feel free to email me{' '}
-      <a href="mailto:yehezkiel.gunawan28@gmail.com?subject=docs.yehezgun.com">
-        here
-      </a>
-    </>
-  ),
-  unstable_faviconGlyph: '📗',
+  navigation: {
+    prev: true,
+    next: true,
+  },
+  footer: {
+    text: (
+      <>
+        MIT {new Date().getFullYear()} ©{' '}
+        <a href="https://yehezgun.com" target="_blank">
+          Yehezkiel Gunawan
+        </a>{' '}
+        <br />
+        If you've found that there's some contents that needs to be updated or
+        fixed, feel free to email me{' '}
+        <a href="mailto:yehezkiel.gunawan28@gmail.com?subject=docs.yehezgun.com">
+          here
+        </a>
+      </>
+    ),
+  },
+
+  faviconGlyph: '📗',
 }
