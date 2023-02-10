@@ -1,20 +1,29 @@
+import { useConfig } from 'nextra-theme-docs'
+
 export default {
-  github: 'https://github.com/yehezkielgunawan',
-  docsRepositoryBase: 'https://github.com/yehezkielgunawan/yehez-docs',
-  titleSuffix: ' – YehezGun',
-  branch: 'main',
-  floatTOC: true,
-  unstable_stork: false,
+  project: { link: 'https://github.com/yehezkielgunawan' },
+  docsRepositoryBase:
+    'https://github.com/yehezkielgunawan/yehez-docs/tree/main',
+  useNextSeoProps() {
+    const { frontMatter } = useConfig()
+
+    const defaultTitle = frontMatter.overrideTitle || 'YehezGun'
+
+    return {
+      description: frontMatter.description,
+      defaultTitle,
+      titleTemplate: '%s - YehezGun',
+    }
+  },
   darkMode: true,
   logo: (
     <>
-      <span className="mr-2 font-extrabold hidden md:inline">Docs</span>
       <span className="text-gray-600 font-normal hidden md:inline">
         YehezGun's Personal Docs
       </span>
     </>
   ),
-  head: (
+  head: () => (
     <>
       <meta name="msapplication-TileColor" content="#ffffff" />
       <meta name="theme-color" content="#ffffff" />
@@ -47,24 +56,26 @@ export default {
       />
     </>
   ),
-  search: true,
-  prevLinks: true,
-  nextLinks: true,
-  footer: true,
-  footerEditLink: 'Edit this page on GitHub',
-  footerText: (
-    <>
-      MIT {new Date().getFullYear()} ©{' '}
-      <a href="https://yehezgun.com" target="_blank">
-        Yehezkiel Gunawan
-      </a>{' '}
-      <br />
-      If you've found that there's some contents that needs to be updated or
-      fixed, feel free to email me{' '}
-      <a href="mailto:yehezkiel.gunawan28@gmail.com?subject=docs.yehezgun.com">
-        here
-      </a>
-    </>
-  ),
-  unstable_faviconGlyph: '📗',
+  navigation: {
+    prev: true,
+    next: true,
+  },
+  footer: {
+    text: (
+      <>
+        MIT {new Date().getFullYear()} ©{' '}
+        <a href="https://yehezgun.com" target="_blank">
+          Yehezkiel Gunawan
+        </a>{' '}
+        <br />
+        If you've found that there's some contents that needs to be updated or
+        fixed, feel free to email me{' '}
+        <a href="mailto:yehezkiel.gunawan28@gmail.com?subject=docs.yehezgun.com">
+          here
+        </a>
+      </>
+    ),
+  },
+
+  faviconGlyph: '📗',
 }
