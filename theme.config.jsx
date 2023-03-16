@@ -62,7 +62,7 @@ export default {
   },
   footer: {
     text: (
-      <>
+      <p>
         MIT {new Date().getFullYear()} ©{' '}
         <a href="https://yehezgun.com" target="_blank">
           Yehezkiel Gunawan
@@ -71,9 +71,9 @@ export default {
         If you've found that there's some contents that needs to be updated or
         fixed, feel free to email me{' '}
         <a href="mailto:yehezkiel.gunawan28@gmail.com?subject=docs.yehezgun.com">
-          here
+          <b>here</b>
         </a>
-      </>
+      </p>
     ),
   },
 
