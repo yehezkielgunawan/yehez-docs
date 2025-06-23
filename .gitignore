@@ -5,3 +5,10 @@ yarn-error.log
 dist
 examples
 packages
+
+# sst
+.sst
+
+
+# open-next
+.open-next
