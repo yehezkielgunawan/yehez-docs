@@ -4,18 +4,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "next build",
     "dev": "next",
     "start": "next start",
-    "build": "next build"
+    "sst:dev": "sst dev",
+    "sst:deploy": "sst deploy --stage production"
   },
-  "author": "Shu Ding",
+  "author": "Yehezkiel Gunawan",
   "license": "MIT",
   "dependencies": {
     "next": "^13.1.6",
     "nextra": "^2.2.14",
     "nextra-theme-docs": "2.2.14",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "sst": "3.17.6"
   },
   "devDependencies": {
     "@cloudflare/next-on-pages": "^1.8.5",
@@ -24,5 +27,6 @@
   "prettier": {
     "semi": false,
     "singleQuote": true
-  }
+  },
+  "packageManager": "pnpm@9.7.0+sha512.dc09430156b427f5ecfc79888899e1c39d2d690f004be70e05230b72cb173d96839587545d09429b55ac3c429c801b4dc3c0e002f653830a420fa2dd4e3cf9cf"
 }
