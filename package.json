@@ -6,20 +6,25 @@
   "scripts": {
     "build": "next build",
     "dev": "next",
-    "start": "next start"
+    "start": "next start",
+    "pages:build": "npx @cloudflare/next-on-pages",
+    "pages:preview": "pnpm run pages:build && wrangler pages dev .vercel/output/static",
+    "pages:deploy": "pnpm run pages:build && wrangler pages deploy .vercel/output/static",
+    "cloudflare:cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
   },
   "author": "Yehezkiel Gunawan",
   "license": "MIT",
   "dependencies": {
-    "next": "^13.1.6",
+    "next": "^14.2.0",
     "nextra": "^2.2.14",
     "nextra-theme-docs": "2.2.14",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@cloudflare/next-on-pages": "^1.8.5",
-    "prettier": "^2.8.8"
+    "@cloudflare/next-on-pages": "^1.13.15",
+    "prettier": "^2.8.8",
+    "wrangler": "^4.33.1"
   },
   "prettier": {
     "semi": false,
