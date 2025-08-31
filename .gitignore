@@ -12,3 +12,10 @@ packages
 
 # open-next
 .open-next
+
+# env var
+.env
+
+# build
+.vercel
+out
